@@ -30,7 +30,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://obscure-system-5gqr56gvgv6vcv569-8080.app.github.dev/api/enviarCarta", {
+      const response = await fetch("https://improved-xylophone-pjrw9vj7j74q3vjw-8080.app.github.dev/api/enviarCarta", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +44,11 @@ function App() {
         console.log("Respuesta del servidor:", data);
       } else {
         const errorData = await response.json();
-        alert("Error al enviar la carta.");
+        if (errorData && errorData.length > 0) {
+          alert(errorData.join("\n")); 
+        } else {
+          alert("Error al enviar la carta.");
+        }
         console.error("Error del servidor:", errorData);
       }
     } catch (error) {
