@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constancia de Aceptacion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedor">
+        <img class="encabezado" src="./img/Superior.png" alt="">
+        <h1 class="Titulo"><u>CONSTANCIA DE ACEPTACIÓN</u></h1>
+        <p id="fechaActual">San Isidro, [Día, Mes y Año] <br>
+           A quien corresponda,</p>
+        <p>
+          Por la presente, la <strong>FUNDACIÓN CALMA</strong>, identificado con <strong>RUC N° 20600792220</strong>,
+          deja constancia de la aceptación de <strong>[Nombre completo del pasante]</strong>, portador del DNI N°
+          <strong>[DNI del pasante]</strong>, para realizar Prácticas <strong>[Pre Profesionales o Profesionales]</strong>
+          en <strong>[el Área o la Unidad de Negocio]</strong>. Esta área se enfoca en la sensibilización y
+          concientización sobre la instauración de una Cultura de Paz en la sociedad, alineándose con
+          su formación en <strong>[Carrera del pasante]</strong>.
+        </p>
+        <p>
+          La práctica iniciará el día <strong id="fechaInicio">[Inicio de funciones del pasante]</strong> y finalizará el
+          <strong id="fechaFin">[Fin de funciones del pasante]</strong>. Durante este periodo, <strong>[Nombre del pasante]</strong>
+          desarrollará funciones clave, que incluirá asegurar la calidad y la eficacia de la lógica del servidor, Promover la innovación y la mejora continua en el área de desarrollo web, brindar soporte técnico al equipo de desarrollo de software.
+        </p>
+        <p>
+          Estamos comprometidos en proporcionar un entorno de aprendizaje enriquecedor que
+          contribuya al desarrollo profesional y personal de <strong>[Nombre del pasante]</strong>,
+          dotándolo de herramientas valiosas para su futuro en el campo laboral.
+        </p>
+        <p>Este documento se expide a solicitud del interesado para efectos pertinentes.</p>
+        <p>Atentamente,</p>
+        <br><br><br><br>
+       
+        <img src="./img/Firma.png" alt="">
+
+        <p style="color: #aaaaaa;">Certificado No. 2024-FC-[Número de documento hecho]</p> 
+        <p><strong>CONSTANCIA DE ACEPTACIÓN</strong></p>
+        <img class="inferior" src="./img/Inferior2.0.png" alt="">
+    </div>
+
+    <script>
+        // Función para convertir fechas al formato solicitado
+        function formatearFecha(fecha) {
+            const meses = [
+                "enero", "febrero", "marzo", "abril", "mayo", "junio",
+                "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+            ];
+            const partes = fecha.split("-");
+            const dia = partes[0];
+            const mes = meses[parseInt(partes[1], 10) - 1];
+            const año = partes[2];
+            return `${dia} de ${mes} del ${año}`;
+        }
+
+        // Fechas dinámicas
+        const fechaActual = "03-01-2025";
+        const fechaInicio = "05-01-2025";
+        const fechaFin = "30-06-2025";
+
+        // Actualizar contenido en el HTML
+        document.getElementById("fechaActual").innerHTML = `San Isidro, ${formatearFecha(fechaActual)}<br>A quien corresponda,`;
+        document.getElementById("fechaInicio").innerText = formatearFecha(fechaInicio);
+        document.getElementById("fechaFin").innerText = formatearFecha(fechaFin);
+    </script>
+</body>
+</html>
